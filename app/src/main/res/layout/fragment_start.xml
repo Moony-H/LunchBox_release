@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/main">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fragment_start_egg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+        <TextView
+
+            android:id="@+id/fragment_start_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/text_start_title"
+            android:textSize="@dimen/size_tutorial_title"
+            android:fontFamily="@font/nanum_square_eb"
+            android:textColor="@color/white"
+            />
+        <TextView
+            android:id="@+id/fragment_start_sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/text_start_sub_title"
+            android:textSize="@dimen/size_tutorial_sub_title"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/margin_start_sub_title_top"
+            />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/fragment_start_egg"
+        android:layout_width="@dimen/size_start_egg_width"
+        android:layout_height="@dimen/size_start_egg_height"
+        android:contentDescription="@string/ImageViewStatic"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/image_character_egg_pin"
+        android:scaleType="centerInside"
+        app:layout_constraintVertical_bias="0.6"
+        />
+
+    <ImageView
+        android:id="@+id/fragment_start_start_button"
+        android:layout_width="@dimen/size_start_icon_start_lunchbox_width"
+        android:layout_height="@dimen/size_start_icon_start_lunchbox_height"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_start_egg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/image_icon_start_lunchbox"
+        android:contentDescription="@string/ImageViewStatic"
+        android:scaleType="centerInside"
+        app:layout_constraintVertical_bias="0.65"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

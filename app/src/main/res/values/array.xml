@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tutorial_title">
+        <item>메인 메뉴 페이지</item>
+        <item>메뉴 선택 페이지</item>
+        <item>메뉴 선택 페이지</item>
+        <item>메뉴 선택 페이지</item>
+        <item>메뉴 선택 페이지</item>
+        <item>메뉴 선택 페이지</item>
+        <item>메뉴 선택 페이지</item>
+        <item>메뉴 선택 페이지</item>
+        <item> </item>
+    </string-array>
+
+
+    <string-array name="tutorial_subtitle">
+        <item>장소 검색을 빠르고 쉽게</item>
+        <item>드래그하여 자유로운 범위 선택</item>
+        <item>드래그하여 자유로운 범위 선택</item>
+        <item>드래그하여 자유로운 범위 선택</item>
+        <item>드래그하여 자유로운 범위 선택</item>
+        <item>원하는 식당을 지정하여 길찾기</item>
+        <item>원하는 식당을 지정하여 길찾기</item>
+        <item>도보부터 자가용까지 빠른 길찾기</item>
+        <item> </item>
+    </string-array>
+
+    <array name="tutorial_image">
+        <item>@drawable/image_guid_first</item>
+        <item>@drawable/image_guid_second</item>
+        <item>@drawable/image_guid_third</item>
+        <item>@drawable/image_guid_fourth</item>
+        <item>@drawable/image_guid_fifth</item>
+        <item>@drawable/image_guid_sixth</item>
+        <item>@drawable/image_guid_seventh</item>
+        <item>@drawable/image_guid_eighth</item>
+        <item>@drawable/rectangle_color_main</item>
+    </array>
+
+
+
+</resources>

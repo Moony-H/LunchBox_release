@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moony.SlideLayout
+    android:id="@+id/fragment_food_list_parent_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:moony_SlideLayout_exposureHeight="@dimen/select_slideLayout_exposure_height"
+    app:moony_SlideLayout_maxHeight="@dimen/select_slideLayout_max_height"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragment_food_list_main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            android:id="@+id/fragment_food_list_card"
+            layout="@layout/source_address_and_bound"
+            android:layout_width="250dp"
+            android:layout_height="88dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="25dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <include
+        android:id="@+id/fragment_food_list_slide_layout"
+        layout="@layout/source_food_list"
+        />
+</moony.SlideLayout>

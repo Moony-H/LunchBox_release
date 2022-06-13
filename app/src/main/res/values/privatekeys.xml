@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="NaverSdkClientID">zx32sf0182</string>
+    <string name="kakaoRestApiKey">KakaoAK 21483965657cc445bc9a6789b7d93ee6</string>
+
+    <string name="adAppKey">ca-app-pub-1782741689480878~1032676841</string>
+    <string name="adViewKey">ca-app-pub-1782741689480878/7172200471</string>
+
+    <string name="adAppKey_test">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="adViewKey_test">ca-app-pub-3940256099942544/6300978111</string>
+
+</resources>

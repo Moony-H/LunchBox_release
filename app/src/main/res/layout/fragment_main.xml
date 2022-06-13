@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/fragment_main_parent_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:moony_SlideLayout_exposureHeight="@dimen/select_slideLayout_exposure_height"
+    app:moony_SlideLayout_maxHeight="@dimen/select_slideLayout_max_height"
+    app:moony_SlideLayout_slideEnabled="true"
+    >
+    <moony.TouchableConstraintLayout
+        android:id="@+id/fragment_main_touchable_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_main_map_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </moony.TouchableConstraintLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_main_ui_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

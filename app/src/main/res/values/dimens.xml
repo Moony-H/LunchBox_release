@@ -1,0 +1,140 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+    <!-- Text Size -->
+    <dimen name="size_bold">20sp</dimen>
+    <dimen name="size_regular">17sp</dimen>
+    <dimen name="size_thin">15sp</dimen>
+    <dimen name="size_sub_text">18sp</dimen>
+    <dimen name="size_main_title">100sp</dimen>
+    <dimen name="size_sub_title">70sp</dimen>
+    <dimen name="size_tutorial_title">30sp</dimen>
+    <dimen name="size_tutorial_sub_title">23sp</dimen>
+
+    <!-- Image Size -->
+    
+    <dimen name="size_start_egg_width">285dp</dimen>
+    <dimen name="size_start_egg_height">203dp</dimen>
+    <dimen name="size_start_icon_start_lunchbox_width">268dp</dimen>
+    <dimen name="size_start_icon_start_lunchbox_height">78dp</dimen>
+    
+    
+    <dimen name="size_main_under_bar_height">84dp</dimen>
+    <dimen name="size_main_egg_width">116dp</dimen>
+    <dimen name="size_main_egg_height">136dp</dimen>
+    <dimen name="size_main_button_width_and_height">45dp</dimen>
+
+
+
+    <dimen name="size_place_recyclerView_item_image_phone">22dp</dimen>
+    <dimen name="size_place_recyclerView_item_image_distance">22dp</dimen>
+
+    <dimen name="size_search_background_egg_height">486dp</dimen>
+    <dimen name="size_search_background_egg_width">234sp</dimen>
+
+
+    <dimen name="size_select_button_icon_width">60dp</dimen>
+    <dimen name="size_select_button_icon_height">70dp</dimen>
+
+    <dimen name="size_select_egg_width">177dp</dimen>
+    <dimen name="size_select_egg_height">146dp</dimen>
+
+
+
+    <dimen name="size_select_pin_height">45dp</dimen>
+    <dimen name="size_select_pin_width">31dp</dimen>
+
+    <dimen name="size_select_restaurant_close_button_width_and_height">40dp</dimen>
+
+    <dimen name="size_direction_egg_image_width">116dp</dimen>
+    <dimen name="size_direction_egg_image_height">136dp</dimen>
+
+    <dimen name="size_fragment_restaurant_bubble_width">103dp</dimen>
+    <dimen name="size_fragment_restaurant_bubble_height">50dp</dimen>
+
+
+    <!--View Size-->
+    <dimen name="size_searchView_height">55dp</dimen>
+    <dimen name="size_select_addressView_width">250dp</dimen>
+    <dimen name="size_select_addressView_height">88dp</dimen>
+
+    <dimen name="size_dot">6dp</dimen>
+    <dimen name="size_dot_selected">10dp</dimen>
+
+
+    <!-- margin -->
+
+    <dimen name="margin_start_title_top">121dp</dimen>
+    <dimen name="margin_start_sub_title_top">28dp</dimen>
+    <dimen name="margin_start_egg_top">112dp</dimen>
+    <dimen name="margin_start_icon_start_lunchbox_top">112dp</dimen>
+    
+    
+    <dimen name="margin_dot_right">7dp</dimen>
+    <dimen name="margin_main_button_right">18dp</dimen>
+    <dimen name="margin_main_button_bottom">14dp</dimen>
+
+
+
+
+    <dimen name="margin_searchView_left">35dp</dimen>
+    <dimen name="margin_searchView_right">35dp</dimen>
+    <dimen name="margin_searchView_top">35dp</dimen>
+
+    <dimen name="margin_search_recyclerView_left">48dp</dimen>
+    <dimen name="margin_search_recyclerView_right">48dp</dimen>
+    <dimen name="margin_search_recyclerView_top">52dp</dimen>
+
+
+    <dimen name="margin_search_list_item_top">12dp</dimen>
+
+    <dimen name="margin_place_recyclerView_item_text_interval">12dp</dimen>
+    <dimen name="margin_place_recyclerView_item_guildLine_horizontal1_top">23dp</dimen>
+    <dimen name="margin_place_recyclerView_item_guildLine_horizontal2_top">48dp</dimen>
+    <dimen name="margin_place_recyclerView_item_text_and_image_interval">8dp</dimen>
+    <dimen name="margin_place_recyclerView_item_text_name_left">5dp</dimen>
+
+
+    <dimen name="margin_select_addressView_top">25dp</dimen>
+    <dimen name="margin_select_addressView_address_text_top">42dp</dimen>
+    <dimen name="margin_select_addressView_range_text_top">70dp</dimen>
+    <dimen name="margin_select_slideLayout_top">80dp</dimen>
+    <dimen name="margin_select_slideLayout_recyclerView_left_and_right">32dp</dimen>
+    <dimen name="margin_select_slideLayout_recyclerView_top">36dp</dimen>
+
+    <dimen name="margin_tutorial_image_view_left_and_right">57dp</dimen>
+
+    <dimen name="margin_fragment_restaurant_webView_left">25dp</dimen>
+    <dimen name="margin_fragment_restaurant_webView_right">25dp</dimen>
+    <dimen name="margin_fragment_restaurant_webView_top">50dp</dimen>
+    <dimen name="margin_fragment_restaurant_slide_up_image_white_left_and_right">15dp</dimen>
+    <dimen name="margin_fragment_restaurant_slide_up_image_white_top">40dp</dimen>
+
+    <dimen name="margin_fragment_restaurant_webView_frame_left">20dp</dimen>
+    <dimen name="margin_fragment_restaurant_webView_frame_right">20dp</dimen>
+    <dimen name="margin_fragment_restaurant_webView_frame_top">20dp</dimen>
+    <dimen name="margin_fragment_restaurant_bubble_bottom">4dp</dimen>
+
+
+
+    
+    
+    <dimen name="margin_source_tutorial_image_view_top">40dp</dimen>
+
+    <dimen name="margin_source_tutorial_sub_title_text_top">10dp</dimen>
+
+    
+    
+    <dimen name="margin_bottom">55dp</dimen>
+    <dimen name="margin_interval">16dp</dimen>
+
+    <!-- button Size-->
+    <dimen name="button_circle">46dp</dimen>
+
+    <!-- others-->
+    <dimen name="slideView_height">164dp</dimen>
+    <dimen name="search_recyclerView_item_empty_space">52dp</dimen>
+    <dimen name="select_slideLayout_exposure_height">243dp</dimen>
+    <dimen name="select_slideLayout_max_height">542dp</dimen>
+</resources>

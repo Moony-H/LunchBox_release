@@ -1,0 +1,9 @@
+-SlideLayout
+완성단계: 터치해서 올리고 내리고는 가능.
+해야할 일: 슬라이드 레이아웃을 터치했다 떼서, 만약 이 레이아웃이 화면의 60%이상 덮으면 끝까지 올라가기. 아니면 끝까지 내려가기.
+           슬라이드 레이아웃의 화면 덮은 %에 따라, 뒷 MainLayout 의 밝기(?) 조절하기.
+           콜백 메서드 (완전히 올라간 상태, 완전히 내려간 상태) 구현하기(아니면 그냥 interface 도 괜춘).
+           문제점- onMeasure 과 onLayout 이 naverMap 때문에 계속 호출됨에 따라 레이아웃 위치가 계속 초기화 된다.
+
+알아낸 것: inflate를 해도 addView를 하지 않으면 못찾음.(findViewById도 안댐)
+settleCapturedViewAt outside of a call to Callback#onViewReleased

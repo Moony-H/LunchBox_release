@@ -1,0 +1,33 @@
+<resources>
+
+    <declare-styleable name="SlideLayout">
+        <attr name="moony_SlideLayout_exposureHeight" format="dimension"/>
+        <attr name="moony_SlideLayout_color" format="color"/>
+        <attr name="moony_SlideLayout_maxHeight" format="dimension"/>
+        <attr name="moony_SlideLayout_scrollViewId" format="reference"/>
+        <attr name="moony_SlideLayout_non_lineal_Id" format="reference"/>
+        <attr name="moony_SlideLayout_slideEnabled" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="CustomSearchView">
+        <attr name="moony_searchView_icon" format="reference"/>
+        <attr name="moony_searchView_Hint" format="string"/>
+        <attr name="moony_searchView_isImage" format="boolean"/>
+        <attr name="moony_searchView_HintTextSize" format="dimension"/>
+
+
+    </declare-styleable>
+    <declare-styleable name="ImageToggleButton">
+        <attr name="moony_onImage" format="reference|color"/>
+        <attr name="moony_offImage" format="reference|color"/>
+        <attr name="moony_default_value" format="boolean"/>
+
+
+    </declare-styleable>
+    <declare-styleable name="CustomViewPagerDot">
+        <attr name="moony_viewPagerId" format="reference"/>
+
+    </declare-styleable>
+
+</resources>
+
+

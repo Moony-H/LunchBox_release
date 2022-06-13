@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/source_search_list_parent_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/source_search_list_item_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="@dimen/size_regular"
+        android:fontFamily="@font/nanum_square_eb"
+        android:textColor="@color/gray"
+        android:ellipsize="end"
+         />
+    <TextView
+        android:id="@+id/source_search_list_item_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/source_search_list_item_name"
+        android:layout_marginTop="@dimen/margin_search_list_item_top"
+        android:textSize="@dimen/size_thin"
+        android:fontFamily="@font/nanum_square_b"
+        android:textColor="@color/gray"
+        android:maxLines="1"
+        android:ellipsize="end"
+        />
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/search_recyclerView_item_empty_space"
+        app:layout_constraintTop_toBottomOf="@id/source_search_list_item_address"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

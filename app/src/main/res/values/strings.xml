@@ -1,0 +1,31 @@
+<resources>
+    <!--Standard -->
+    <string name="app_name">LunchBox</string>
+
+    <!--TextView -->
+    <string name="text_dynamic">NULL</string>
+    <string name="text_place_search">장소 검색</string>
+    <string name="no_place_phone">N/A</string>
+    <string name="text_select_food_name_korean">한식</string>
+    <string name="text_select_food_name_western">양식</string>
+    <string name="text_select_food_name_chinese">중식</string>
+    <string name="text_select_food_name_japanese">일식</string>
+    <string name="text_loading">Loading…</string>
+    <string name="text_start_title">오늘의 점심 메뉴는?</string>
+    <string name="text_start_sub_title">한식부터 양식까지 다양하게</string>
+    <string name="text_main_address_loading">Loading…</string>
+
+    <!--Guidance message-->
+
+
+
+
+
+    <string name="guide_not_found_location">위치정보가 활성화 되어있지 않습니다. 위치 권한을 설정해 주세요.</string>
+    <string name="guide_not_found_address">해외이시거나 오류로 위치를 찾을 수 없습니다. 맵을 터치하여 중심점을 선택해 주세요.</string>
+
+    <!--DeBug-->
+    <string name="ImageViewDynamic">this ImageView is Dynamic</string>
+    <string name="ImageViewStatic">this ImageView is Static</string>
+
+</resources>

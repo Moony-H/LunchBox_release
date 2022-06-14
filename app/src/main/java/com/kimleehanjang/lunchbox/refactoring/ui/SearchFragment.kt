@@ -73,6 +73,7 @@ class SearchFragment: Fragment() {
         adapter = SearchAdapter { place ->
 
             mainViewModel.setSelectedPosition(LatLng(place.latitude, place.longitude))
+            mainViewModel.isTracking=false
             Log.d("SearchFragment", "search result item clicked")
             parentFragmentManager.popBackStack()
         }

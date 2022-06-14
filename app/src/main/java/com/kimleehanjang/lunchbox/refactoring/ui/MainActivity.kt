@@ -84,7 +84,7 @@ class MainActivity:BaseActivity() {
             Log.d("MainActivity", "top ui is ${FragmentTag.values()[it].tag}")
         }
 
-        viewModel.userPosition.observe(this, userPositionObserver)
+        //viewModel.userPosition.observe(this, userPositionObserver)
 
         setContentView(binding.root)
 
@@ -135,15 +135,15 @@ class MainActivity:BaseActivity() {
     override fun permissionGranted(requestCode: Int) {
         locationManager.requestLocationUpdates(
             LocationManager.GPS_PROVIDER,
-            10000,
-            1f,
+            2000,
+            20f,
             gpsLocationListener
         )
 
         locationManager.requestLocationUpdates(
             LocationManager.NETWORK_PROVIDER,
-            10000,
-            1f,
+            2000,
+            10f,
             networkLocationListener
         )
         Log.d("MainActivity", "gps permission granted")
@@ -185,10 +185,10 @@ class MainActivity:BaseActivity() {
 
     }
 
-    private val userPositionObserver = Observer { latlng: LatLng ->
-        locationManager.removeUpdates(gpsLocationListener)
-        locationManager.removeUpdates(networkLocationListener)
-    }
+    //private val userPositionObserver = Observer { latlng: LatLng ->
+    //    locationManager.removeUpdates(gpsLocationListener)
+    //    locationManager.removeUpdates(networkLocationListener)
+    //}
 
     override fun permissionDenied(requestCode: Int) {
         Log.d("MainActivity", "gps permission denied")

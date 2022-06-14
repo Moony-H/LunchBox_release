@@ -43,6 +43,7 @@ class MainFragment: Fragment() ,OnMapReadyCallback {
     private var map: NaverMap? = null
     private var beforeFragment = 1
 
+
     //circleOverlay
     private val circle = CircleOverlay()
 
@@ -130,9 +131,12 @@ class MainFragment: Fragment() ,OnMapReadyCallback {
         }
 
 
-        viewModel.userPosition.observe(viewLifecycleOwner) {
-            Log.d("MainFragment", "user position changed: lat:${it.latitude}, lng:${it.longitude}")
-            viewModel.setSelectedPosition(it)
+        viewModel.userPosition.observe(viewLifecycleOwner) { latLng ->
+            Log.d("MainFragment", "user position changed: lat:${latLng.latitude}, lng:${latLng.longitude}")
+            if(viewModel.isTracking){
+                viewModel.setSelectedPosition(latLng)
+            }
+
         }
 
         viewModel.selectedPosition.observe(viewLifecycleOwner) {
@@ -192,23 +196,23 @@ class MainFragment: Fragment() ,OnMapReadyCallback {
         }
 
 
-        viewModel.selectedPosition.value ?: run {
-            Log.d("is", "null")
-            if (viewModel.userPosition.value != null)
-                viewModel.setSelectedPosition(viewModel.userPosition.value!!)
-        }
 
-        viewModel.userPosition.value?.let { viewModel.setSelectedPosition(it) }
 
         //초기 카메라 이동(혹은 화면 회전 시 카메라 이동)
-        val cameraPosition = naverMap.cameraPosition
-        if (!isCameraAndSelectedPositionSame(cameraPosition))
-            viewModel.selectedPosition.value?.let { moveCamera(it) }
+        //val cameraPosition = naverMap.cameraPosition
+        //if (!isCameraAndSelectedPositionSame(cameraPosition))
+        //    viewModel.selectedPosition.value?.let {
+        //        Log.d("move","first ${it.latitude} ${it.longitude}")
+        //        moveCamera(it)
+        //        marker.position = it
+        //        marker.map = map
+        //    }
 
         naverMap.setOnMapClickListener { _, latLng ->
             if (viewModel.frontFragment.value != FragmentTag.FRAGMENT_LOCATION.fragment_num)
                 return@setOnMapClickListener
             viewModel.setSelectedPosition(latLng)
+            viewModel.isTracking=false
         }
     }
 

@@ -90,20 +90,17 @@ class SlideLayout: ViewGroup {
     }
 
 
-    override fun onFinishInflate() {
-        super.onFinishInflate()
-        //자식뷰 저장.
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+
+        if(childCount!=2){
+            throw IllegalStateException("SlideUpLayout's child number must be two")
+        }
 
         mMainView = getChildAt(0)
         mSlideView = getChildAt(1)
         if (mScrollViewResId != -1)
             mScrollView = findViewById(mScrollViewResId)
-
-
-    }
-
-    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-
 
         val widthMode = MeasureSpec.getMode(widthMeasureSpec)
         val heightMode = MeasureSpec.getMode(heightMeasureSpec)

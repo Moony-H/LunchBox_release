@@ -42,6 +42,9 @@
         <entry key="..\:/Users/moony/AndroidStudioProjects/LunchBox/app/src/main/res/layout/source_test_recycler_view_item.xml" value="0.18297101449275363" />
         <entry key="..\:/Users/moony/AndroidStudioProjects/LunchBox/app/src/main/res/layout/source_toggle_button_with_text.xml" value="0.196875" />
         <entry key="..\:/Users/moony/AndroidStudioProjects/LunchBox/app/src/main/res/layout/source_tutorial_view_pager.xml" value="0.196875" />
+        <entry key="..\:/Users/moony/AndroidStudioProjects/LunchBox_release/app/src/main/res/layout/fragment_food_list.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/moony/AndroidStudioProjects/LunchBox_release/app/src/main/res/layout/fragment_location.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/moony/AndroidStudioProjects/LunchBox_release/app/src/main/res/layout/fragment_select_page.xml" value="0.18802083333333333" />
       </map>
     </option>
   </component>

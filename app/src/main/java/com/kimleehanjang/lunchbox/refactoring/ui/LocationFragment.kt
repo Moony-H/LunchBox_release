@@ -95,6 +95,7 @@ class LocationFragment:Fragment(),View.OnClickListener {
             binding.fragmentLocationUserPosition -> {
                 Log.d("LocationButtonFragment", "position button clicked")
                 viewModel.userPosition.value?.let { viewModel.setSelectedPosition(it) }
+                viewModel.isTracking=true
             }
             binding.fragmentLocationSearch.fragmentLocationButtonSearch -> {
                 Log.d("LocationButtonFragment", "search view clicked")

@@ -57,6 +57,9 @@ class MainViewModel @Inject constructor(private val retrofitRepository: Retrofit
     val selectedPin: LiveData<Pin?>
         get() = _selectedPin
 
+    var isTracking=true
+
+
     private val _buttonState = MutableLiveData<List<Boolean>>(
         mutableListOf(
             true,

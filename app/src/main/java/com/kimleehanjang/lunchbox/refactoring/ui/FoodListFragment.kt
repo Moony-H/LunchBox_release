@@ -110,8 +110,8 @@ class FoodListFragment: Fragment(),View.OnClickListener {
             Log.d("visible", "visible")
             randomButton.visibility = View.VISIBLE
         }
-        val rect = Rect(0, 1309, 582, 1484)
-        binding.fragmentFoodListParentLayout.setNonTouchArea(listOf(rect))
+        //val rect = Rect(0, 1309, 582, 1484)
+        //binding.fragmentFoodListParentLayout.setNonTouchArea(listOf(rect))
 
         viewModel.circleRadius.observe(viewLifecycleOwner) {
             it?.let {

@@ -199,14 +199,14 @@ class MainFragment: Fragment() ,OnMapReadyCallback {
 
 
         //초기 카메라 이동(혹은 화면 회전 시 카메라 이동)
-        //val cameraPosition = naverMap.cameraPosition
-        //if (!isCameraAndSelectedPositionSame(cameraPosition))
-        //    viewModel.selectedPosition.value?.let {
-        //        Log.d("move","first ${it.latitude} ${it.longitude}")
-        //        moveCamera(it)
-        //        marker.position = it
-        //        marker.map = map
-        //    }
+        val cameraPosition = naverMap.cameraPosition
+        if (!isCameraAndSelectedPositionSame(cameraPosition))
+            viewModel.selectedPosition.value?.let {
+                Log.d("move","first ${it.latitude} ${it.longitude}")
+                moveCamera(it)
+                marker.position = it
+                marker.map = map
+            }
 
         naverMap.setOnMapClickListener { _, latLng ->
             if (viewModel.frontFragment.value != FragmentTag.FRAGMENT_LOCATION.fragment_num)

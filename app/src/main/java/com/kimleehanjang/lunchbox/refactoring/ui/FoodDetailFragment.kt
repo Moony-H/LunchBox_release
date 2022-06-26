@@ -85,8 +85,8 @@ class FoodDetailFragment: Fragment(),View.OnClickListener {
             findRoadButton.visibility = View.VISIBLE
         }
 
-        val rect = Rect(0, 1309, 582, 1484)
-        binding.fragmentFoodDetailParentLayout.setNonTouchArea(listOf(rect))
+        //val rect = Rect(0, 1309, 582, 1484)
+        //binding.fragmentFoodDetailParentLayout.setNonTouchArea(listOf(rect))
 
         webView = binding.fragmentFoodDetailSlide.fragmentFoodDetailSlideUpWebView
         val webViewSettings = webView.settings

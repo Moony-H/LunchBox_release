@@ -3,8 +3,10 @@ package com.kimleehanjang.lunchbox.refactoring.ui
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
+import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -133,19 +135,77 @@ class MainActivity:BaseActivity() {
 
     @SuppressLint("MissingPermission")
     override fun permissionGranted(requestCode: Int) {
-        locationManager.requestLocationUpdates(
-            LocationManager.GPS_PROVIDER,
-            2000,
-            20f,
-            gpsLocationListener
-        )
+        if(Build.VERSION.SDK_INT<=Build.VERSION_CODES.O){
+            locationManager.requestLocationUpdates(
+                LocationManager.NETWORK_PROVIDER,
+                2000,
+                10f,
+                object :LocationListener{
+                    override fun onLocationChanged(location: Location) {
+                        location?.let {
+                            val position = LatLng(it.latitude, it.longitude)
+                            viewModel.setUserPosition(position)
+                            Log.d("test","gps changed")
+                        } ?: run {
+                            Log.d("MainActivity", "Gps is off")
+                        }
+                    }
 
-        locationManager.requestLocationUpdates(
-            LocationManager.NETWORK_PROVIDER,
-            2000,
-            10f,
-            networkLocationListener
-        )
+                    override fun onProviderDisabled(provider: String) {
+                        //super.onProviderDisabled(provider)
+
+                    }
+
+                    override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
+                        super.onStatusChanged(provider, status, extras)
+                    }
+
+                }
+            )
+
+            locationManager.requestLocationUpdates(
+                LocationManager.GPS_PROVIDER,
+                2000,
+                10f,
+                object :LocationListener{
+                    override fun onLocationChanged(location: Location) {
+                        location?.let {
+                            val position = LatLng(it.latitude, it.longitude)
+                            viewModel.setUserPosition(position)
+                            Log.d("test","gps changed")
+                        } ?: run {
+                            Log.d("MainActivity", "Gps is off")
+                        }
+                    }
+
+                    override fun onProviderDisabled(provider: String) {
+                        //super.onProviderDisabled(provider)
+
+                    }
+
+                    override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
+                        super.onStatusChanged(provider, status, extras)
+                    }
+
+                }
+            )
+        }
+        else{
+            locationManager.requestLocationUpdates(
+                LocationManager.GPS_PROVIDER,
+                2000,
+                20f,
+                gpsLocationListener
+            )
+
+            locationManager.requestLocationUpdates(
+                LocationManager.NETWORK_PROVIDER,
+                2000,
+                10f,
+                networkLocationListener
+            )
+        }
+
         Log.d("MainActivity", "gps permission granted")
         if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             Log.d("MainActivity", "gps provider enabled")

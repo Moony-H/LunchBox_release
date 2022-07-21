@@ -36,6 +36,15 @@
 
 <br/>
 
+## Wiki
+
+구현 설명이 적혀 있는 wiki
+
+[https://github.com/Moony-H/LunchBox_release/wiki](https://github.com/Moony-H/LunchBox_release/wiki)
+<br/>
+
+<br/>
+
 # 앱 소개
 
 GPS를 활용하여 주위에 있는 음식점을 탐색할 수 있는 앱 입니다.

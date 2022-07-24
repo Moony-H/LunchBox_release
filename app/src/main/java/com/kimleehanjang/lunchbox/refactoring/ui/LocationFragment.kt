@@ -61,6 +61,16 @@ class LocationFragment:Fragment(),View.OnClickListener {
         return binding.root
     }
 
+    override fun onStop() {
+        super.onStop()
+        Log.d("testing fragment","on Stop")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("testing fragment","onResume")
+        viewModel.isTracking=true
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -81,8 +91,8 @@ class LocationFragment:Fragment(),View.OnClickListener {
                             FragmentTag.FRAGMENT_FOOD_LIST.tag
                         )
                         addToBackStack(FragmentTag.FRAGMENT_FOOD_LIST.tag)
-
                     }
+                    viewModel.isTracking=false
                 } ?: run {
                     Toast.makeText(
                         requireContext(),

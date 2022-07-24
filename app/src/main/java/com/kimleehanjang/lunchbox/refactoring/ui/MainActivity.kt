@@ -184,7 +184,7 @@ class MainActivity:BaseActivity() {
                     }
 
                     override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
-                        super.onStatusChanged(provider, status, extras)
+                        //super.onStatusChanged(provider, status, extras)
                     }
 
                 }

@@ -131,7 +131,7 @@ class MainViewModel @Inject constructor(private val retrofitRepository: Retrofit
 
     fun setSelectedAddress(latLng: LatLng) {
         var result = ""
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.IO+coroutineExceptionHandler) {
             val response = retrofitRepository.getAddress(latLng)
             response?.let {
                 result = if (it.documents.isEmpty())
@@ -170,7 +170,7 @@ class MainViewModel @Inject constructor(private val retrofitRepository: Retrofit
     fun setAllPins(onPinClicked: (Pin) -> Unit) {
 
 
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.IO+coroutineExceptionHandler) {
             if (_selectedPosition.value != null && _circleRadius.value != null) {
 
                 val awaitList = ArrayList<Deferred<List<Place>>>()
@@ -203,7 +203,7 @@ class MainViewModel @Inject constructor(private val retrofitRepository: Retrofit
 
     private suspend fun getOneMenuPin(keyword: String): Deferred<List<Place>> {
 
-        val wait = viewModelScope.async(Dispatchers.IO) {
+        val wait = viewModelScope.async(Dispatchers.IO+coroutineExceptionHandler) {
             val result = mutableListOf<Place>()
             if (_selectedPosition.value != null && _circleRadius.value != null) {
                 var page = 1
@@ -235,6 +235,11 @@ class MainViewModel @Inject constructor(private val retrofitRepository: Retrofit
             return@async result
         }
         return wait
+    }
+
+    private val coroutineExceptionHandler= CoroutineExceptionHandler{_, throwable->
+        throwable.printStackTrace()
+
     }
 
 }

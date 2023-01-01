@@ -43,6 +43,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
         savedInstanceState: Bundle?
     ): View {
 
+        super.onCreateView(inflater, container, savedInstanceState)
 
         //현재 사용자와 상호작용 하고 있는 프래그먼트 알림
         mainViewModel.setFrontFragment(FragmentTag.FRAGMENT_LOCATION.fragment_num)

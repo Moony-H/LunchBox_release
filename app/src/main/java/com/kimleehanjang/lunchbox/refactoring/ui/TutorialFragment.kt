@@ -33,6 +33,9 @@ class TutorialFragment : BaseFragment<FragmentTutorialBinding>() {
     ): View {
 
 
+        super.onCreateView(inflater, container, savedInstanceState)
+
+
         val viewPagerAdapter = TutorialViewPagerAdapter()
         binding.fragmentTutorialViewPager.adapter = viewPagerAdapter
         binding.fragmentTutorialViewPager.orientation = ViewPager2.ORIENTATION_HORIZONTAL

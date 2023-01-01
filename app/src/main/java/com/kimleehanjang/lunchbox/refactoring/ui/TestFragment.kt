@@ -36,6 +36,8 @@ class TestFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+
         _binding = FragmentSlideBinding.inflate(inflater, container, false)
 
 

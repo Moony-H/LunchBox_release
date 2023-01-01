@@ -47,6 +47,7 @@ class FoodDetailFragment: BaseFragment<FragmentFoodDetailBinding>(),View.OnClick
         savedInstanceState: Bundle?
     ): View {
 
+        super.onCreateView(inflater, container, savedInstanceState)
         Log.d("FoodDetailFragment", "onCreateView")
         binding.fragmentFoodDetailSlide.fragmentFoodDetailCloseButton.setOnClickListener(this)
 

@@ -21,7 +21,7 @@ class StartFragment : BaseFragment<FragmentStartBinding>() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
+        super.onCreateView(inflater, container, savedInstanceState)
         binding.fragmentStartStartButton.setOnClickListener {
             parentFragmentManager.commit {
                 remove(this@StartFragment)

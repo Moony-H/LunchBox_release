@@ -24,7 +24,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlin.system.exitProcess
 
 @AndroidEntryPoint
-class MainActivity:BaseActivity() {
+class MainActivity : BaseActivity() {
     private var _binding: ActivityMainBinding? = null
     private val binding: ActivityMainBinding
         get() = _binding!!
@@ -124,8 +124,6 @@ class MainActivity:BaseActivity() {
         }
 
 
-
-
     }
 
     override fun onDestroy() {
@@ -135,17 +133,17 @@ class MainActivity:BaseActivity() {
 
     @SuppressLint("MissingPermission")
     override fun permissionGranted(requestCode: Int) {
-        if(Build.VERSION.SDK_INT<=Build.VERSION_CODES.O){
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.O) {
             locationManager.requestLocationUpdates(
                 LocationManager.NETWORK_PROVIDER,
                 2000,
                 10f,
-                object :LocationListener{
+                object : LocationListener {
                     override fun onLocationChanged(location: Location) {
                         location?.let {
                             val position = LatLng(it.latitude, it.longitude)
                             viewModel.setUserPosition(position)
-                            Log.d("test","gps changed")
+                            Log.d("test", "gps changed")
                         } ?: run {
                             Log.d("MainActivity", "Gps is off")
                         }
@@ -167,12 +165,12 @@ class MainActivity:BaseActivity() {
                 LocationManager.GPS_PROVIDER,
                 2000,
                 10f,
-                object :LocationListener{
+                object : LocationListener {
                     override fun onLocationChanged(location: Location) {
                         location?.let {
                             val position = LatLng(it.latitude, it.longitude)
                             viewModel.setUserPosition(position)
-                            Log.d("test","gps changed")
+                            Log.d("test", "gps changed")
                         } ?: run {
                             Log.d("MainActivity", "Gps is off")
                         }
@@ -189,8 +187,7 @@ class MainActivity:BaseActivity() {
 
                 }
             )
-        }
-        else{
+        } else {
             locationManager.requestLocationUpdates(
                 LocationManager.GPS_PROVIDER,
                 2000,
@@ -211,10 +208,8 @@ class MainActivity:BaseActivity() {
             Log.d("MainActivity", "gps provider enabled")
 
 
-
         } else if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
             Log.d("MainActivity", "network provider enabled")
-
 
 
         } else {

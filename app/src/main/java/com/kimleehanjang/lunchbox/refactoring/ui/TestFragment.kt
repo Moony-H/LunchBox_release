@@ -14,7 +14,7 @@ import com.kimleehanjang.lunchbox.refactoring.data.Food
 import com.kimleehanjang.lunchbox.refactoring.util.ToggleButtonFactory
 import com.kimleehanjang.lunchbox.refactoring.viewModels.MainViewModel
 
-class TestFragment: Fragment() {
+class TestFragment : Fragment() {
     private var _binding: FragmentSlideBinding? = null
     private val binding: FragmentSlideBinding
         get() = _binding!!

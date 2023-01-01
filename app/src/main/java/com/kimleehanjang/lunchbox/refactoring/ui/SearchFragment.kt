@@ -24,11 +24,10 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class SearchFragment: Fragment() {
+class SearchFragment : BaseFragment<FragmentSearchBinding>() {
 
-    private var _binding: FragmentSearchBinding? = null
-    private val binding: FragmentSearchBinding
-        get() = _binding!!
+    override val viewBindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentSearchBinding
+        get() = FragmentSearchBinding::inflate
 
     private val mainViewModel: MainViewModel by viewModels(ownerProducer = { requireActivity() })
     private val searchViewModel: SearchViewModel by viewModels()
@@ -43,7 +42,6 @@ class SearchFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSearchBinding.inflate(inflater, container, false)
 
 
         //현재 사용자와 상호작용 하고 있는 프래그먼트 알림
@@ -73,7 +71,7 @@ class SearchFragment: Fragment() {
         adapter = SearchAdapter { place ->
 
             mainViewModel.setSelectedPosition(LatLng(place.latitude, place.longitude))
-            mainViewModel.isTracking=false
+            mainViewModel.isTracking = false
             Log.d("SearchFragment", "search result item clicked")
             parentFragmentManager.popBackStack()
         }

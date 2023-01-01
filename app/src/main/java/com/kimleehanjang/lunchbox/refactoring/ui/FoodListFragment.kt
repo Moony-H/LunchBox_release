@@ -27,14 +27,13 @@ import com.kimleehanjang.lunchbox.refactoring.viewModels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class FoodListFragment: Fragment(),View.OnClickListener {
+class FoodListFragment : BaseFragment<FragmentFoodListBinding>(), View.OnClickListener {
 
     //이 프래그먼트가 하는 일:
     //1. viewModel 에서 검색된 핀 값을 받아서 사용자에게 목록을 보여 준다.
     //2. viewModel 의 사용자에게 보여 줄 핀들을 바꾼다.
-    private var _binding: FragmentFoodListBinding? = null
-    private val binding: FragmentFoodListBinding
-        get() = _binding!!
+    override val viewBindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentFoodListBinding
+        get() = FragmentFoodListBinding::inflate
     private lateinit var adapter: PinAdapter
 
     private lateinit var randomButton: ImageView
@@ -49,8 +48,6 @@ class FoodListFragment: Fragment(),View.OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentFoodListBinding.inflate(inflater, container, false)
-        Log.d("FoodListFragment", "onCreateView")
 
         //현재 사용자와 상호작용 하고 있는 프래그먼트 알림.
         viewModel.setFrontFragment(FragmentTag.FRAGMENT_FOOD_LIST.fragment_num)
@@ -174,7 +171,6 @@ class FoodListFragment: Fragment(),View.OnClickListener {
     override fun onDestroy() {
         super.onDestroy()
         Log.d("FoodListFragment", "on Destroy")
-        _binding = null
         //viewModel.circleRadius.removeObservers(requireActivity())
         //viewModel.listPins.removeObserver(listPinObserve)
         //viewModel.selectedPin.removeObserver(selectedPinObserver)

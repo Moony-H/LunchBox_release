@@ -20,10 +20,10 @@ import com.kimleehanjang.lunchbox.refactoring.viewModels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LocationFragment:Fragment(),View.OnClickListener {
-    private var _binding: FragmentLocationBinding? = null
-    private val binding: FragmentLocationBinding
-        get() = _binding!!
+class LocationFragment : BaseFragment<FragmentLocationBinding>(), View.OnClickListener {
+
+    override val viewBindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentLocationBinding
+        get() = FragmentLocationBinding::inflate
     private val viewModel: MainViewModel by viewModels(ownerProducer = { requireActivity() })
 
 
@@ -32,7 +32,6 @@ class LocationFragment:Fragment(),View.OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentLocationBinding.inflate(inflater, container, false)
 
         Log.d("LocationFragment", "onCreateView")
 
@@ -63,19 +62,15 @@ class LocationFragment:Fragment(),View.OnClickListener {
 
     override fun onStop() {
         super.onStop()
-        Log.d("testing fragment","on Stop")
+        Log.d("testing fragment", "on Stop")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("testing fragment","onResume")
-        viewModel.isTracking=true
+        Log.d("testing fragment", "onResume")
+        viewModel.isTracking = true
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 
     override fun onClick(view: View?) {
         when (view) {
@@ -92,7 +87,7 @@ class LocationFragment:Fragment(),View.OnClickListener {
                         )
                         addToBackStack(FragmentTag.FRAGMENT_FOOD_LIST.tag)
                     }
-                    viewModel.isTracking=false
+                    viewModel.isTracking = false
                 } ?: run {
                     Toast.makeText(
                         requireContext(),
@@ -105,7 +100,7 @@ class LocationFragment:Fragment(),View.OnClickListener {
             binding.fragmentLocationUserPosition -> {
                 Log.d("LocationButtonFragment", "position button clicked")
                 viewModel.userPosition.value?.let { viewModel.setSelectedPosition(it) }
-                viewModel.isTracking=true
+                viewModel.isTracking = true
             }
             binding.fragmentLocationSearch.fragmentLocationButtonSearch -> {
                 Log.d("LocationButtonFragment", "search view clicked")

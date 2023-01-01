@@ -30,11 +30,10 @@ import dagger.hilt.android.AndroidEntryPoint
 //1. 맵 관리. 맵에 관한 처리는 이곳에서 한다.
 //2. 맵 관리와 마찬가지로 서클에 관한 것도 여기서 처리한다.
 @AndroidEntryPoint
-class MainFragment: Fragment() ,OnMapReadyCallback {
+class MainFragment : BaseFragment<FragmentMainBinding>(), OnMapReadyCallback {
 
-    private var _binding: FragmentMainBinding? = null
-    private val binding: FragmentMainBinding
-        get() = _binding!!
+    override val viewBindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentMainBinding
+        get() = FragmentMainBinding::inflate
 
     //viewModel
     private val viewModel: MainViewModel by viewModels(ownerProducer = { requireActivity() })
@@ -57,7 +56,6 @@ class MainFragment: Fragment() ,OnMapReadyCallback {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentMainBinding.inflate(inflater, container, false)
 
         //현재 사용자와 상호작용 하고 있는 프래그먼트 알림
         viewModel.setFrontFragment(FragmentTag.FRAGMENT_MAIN.fragment_num)
@@ -132,8 +130,11 @@ class MainFragment: Fragment() ,OnMapReadyCallback {
 
 
         viewModel.userPosition.observe(viewLifecycleOwner) { latLng ->
-            Log.d("MainFragment", "user position changed: lat:${latLng.latitude}, lng:${latLng.longitude}")
-            if(viewModel.isTracking){
+            Log.d(
+                "MainFragment",
+                "user position changed: lat:${latLng.latitude}, lng:${latLng.longitude}"
+            )
+            if (viewModel.isTracking) {
                 viewModel.setSelectedPosition(latLng)
             }
 
@@ -173,12 +174,6 @@ class MainFragment: Fragment() ,OnMapReadyCallback {
         return binding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
-
     @UiThread
     override fun onMapReady(naverMap: NaverMap) {
         Log.d("MainFragment", "on map ready")
@@ -196,13 +191,11 @@ class MainFragment: Fragment() ,OnMapReadyCallback {
         }
 
 
-
-
         //초기 카메라 이동(혹은 화면 회전 시 카메라 이동)
         val cameraPosition = naverMap.cameraPosition
         if (!isCameraAndSelectedPositionSame(cameraPosition))
             viewModel.selectedPosition.value?.let {
-                Log.d("move","first ${it.latitude} ${it.longitude}")
+                Log.d("move", "first ${it.latitude} ${it.longitude}")
                 moveCamera(it)
                 marker.position = it
                 marker.map = map
@@ -212,7 +205,7 @@ class MainFragment: Fragment() ,OnMapReadyCallback {
             if (viewModel.frontFragment.value != FragmentTag.FRAGMENT_LOCATION.fragment_num)
                 return@setOnMapClickListener
             viewModel.setSelectedPosition(latLng)
-            viewModel.isTracking=false
+            viewModel.isTracking = false
         }
     }
 

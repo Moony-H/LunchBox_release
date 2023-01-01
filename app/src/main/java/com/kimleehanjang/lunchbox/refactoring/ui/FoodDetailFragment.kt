@@ -31,11 +31,12 @@ import java.lang.Exception
 
 
 @AndroidEntryPoint
-class FoodDetailFragment: Fragment(),View.OnClickListener {
+class FoodDetailFragment: BaseFragment<FragmentFoodDetailBinding>(),View.OnClickListener {
 
-    private var _binding: FragmentFoodDetailBinding? = null
-    private val binding: FragmentFoodDetailBinding
-        get() = _binding!!
+    override val viewBindingInflater: (inflater: LayoutInflater, parent: ViewGroup?, attachToParent: Boolean) -> FragmentFoodDetailBinding
+        get() = FragmentFoodDetailBinding::inflate
+
+
     private val viewModel: MainViewModel by viewModels(ownerProducer = { requireActivity() })
     private lateinit var findRoadButton: ImageView
 
@@ -45,7 +46,6 @@ class FoodDetailFragment: Fragment(),View.OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentFoodDetailBinding.inflate(inflater, container, false)
 
         Log.d("FoodDetailFragment", "onCreateView")
         binding.fragmentFoodDetailSlide.fragmentFoodDetailCloseButton.setOnClickListener(this)
@@ -113,12 +113,7 @@ class FoodDetailFragment: Fragment(),View.OnClickListener {
         return binding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-        //viewModel.selectedPin.removeObserver(selectedPinObserver)
-        //viewModel.circleRadius.removeObserver(circleRadiusObserver)
-    }
+
 
     override fun onClick(view: View?) {
         when (view) {

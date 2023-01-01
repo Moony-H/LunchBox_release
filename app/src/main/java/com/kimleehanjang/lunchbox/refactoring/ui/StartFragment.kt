@@ -10,18 +10,17 @@ import com.kimleehanjang.lunchbox.R
 import com.kimleehanjang.lunchbox.databinding.FragmentStartBinding
 import com.kimleehanjang.lunchbox.refactoring.tag.FragmentTag
 
-class StartFragment: Fragment() {
+class StartFragment : BaseFragment<FragmentStartBinding>() {
 
-    private var _binding: FragmentStartBinding? = null
-    private val binding: FragmentStartBinding
-        get() = _binding!!
+
+    override val viewBindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentStartBinding
+        get() = FragmentStartBinding::inflate
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentStartBinding.inflate(inflater, container, false)
 
         binding.fragmentStartStartButton.setOnClickListener {
             parentFragmentManager.commit {
@@ -36,8 +35,4 @@ class StartFragment: Fragment() {
         return binding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }

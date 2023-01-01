@@ -19,11 +19,10 @@ import com.kimleehanjang.lunchbox.refactoring.others.TutorialViewPagerAdapter
 import com.kimleehanjang.lunchbox.refactoring.data.DynamicViewId
 import com.kimleehanjang.lunchbox.refactoring.tag.FragmentTag
 
-class TutorialFragment: Fragment() {
+class TutorialFragment : BaseFragment<FragmentTutorialBinding>() {
 
-    private var _binding: FragmentTutorialBinding? = null
-    private val binding: FragmentTutorialBinding
-        get() = _binding!!
+    override val viewBindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentTutorialBinding
+        get() = FragmentTutorialBinding::inflate
 
     private var prevPosition = 0
     private val indicatorImageViewList = mutableListOf<ImageView>()
@@ -32,8 +31,6 @@ class TutorialFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-        _binding = FragmentTutorialBinding.inflate(inflater, container, false)
 
 
         val viewPagerAdapter = TutorialViewPagerAdapter()
@@ -115,8 +112,4 @@ class TutorialFragment: Fragment() {
         return binding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }

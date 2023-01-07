@@ -22,6 +22,7 @@ class UpLayout : ConstraintLayout {
                 MotionEvent.ACTION_DOWN -> {
                     return !isNonTouchArea(it.x, it.y)
                 }
+
                 else -> {
 
                 }
